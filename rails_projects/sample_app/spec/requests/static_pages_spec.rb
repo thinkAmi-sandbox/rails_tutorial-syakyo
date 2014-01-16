@@ -8,6 +8,7 @@ describe "Static pages" do
     it { should have_title(full_title(page_title)) }
   end
 
+
   it "should have the right links on the layout" do
     visit root_path
     click_link "About"
