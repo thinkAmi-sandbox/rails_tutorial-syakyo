@@ -51,6 +51,7 @@ describe "Authentication" do
     end
   end
 
+
   describe "authorizaiton" do
     describe "for non-signed-in users" do
       let(:user) { FactoryGirl.create(:user) }
@@ -91,6 +92,16 @@ describe "Authentication" do
 
         describe "visiting the user index" do
           before { visit users_path }
+          it { should have_title('Sign in') }
+        end
+
+        describe "visiting the foollowing page" do
+          before { visit following_user_path(user) }
+          it { should have_title('Sign in')}
+        end
+
+        describe "visiting the followers page" do
+          before { visit followers_user_path(user) }
           it { should have_title('Sign in') }
         end
       end
