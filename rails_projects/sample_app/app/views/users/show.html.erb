@@ -2,10 +2,7 @@
 <div class="row">
   <aside class="span4">
     <section>
-      <h1>
-        <%= gravatar_for @user, size: 40 %>
-        <%= @user.name %>
-      </h1>
+      <%= render 'shared/user_gravatar', user: @user %>
     </section>
     <section>
       <%= render 'shared/stats' %>
